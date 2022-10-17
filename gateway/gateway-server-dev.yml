@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      discovery.locator:
+        enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: organization-service
+          uri: lb://organization-service
+          predicates:
+            - Path=/org-service/**
+          filters:
+            - RewritePath=/org-service/(?<path>.*), /$\{path}
