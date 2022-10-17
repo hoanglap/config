@@ -8,9 +8,9 @@ spring:
         - id: organization-service
           uri: lb://organization-service
           predicates:
-            - Path=/orgservice/**
+            - Path=/org-service/**
           filters:
-            - RewritePath=/orgservice/(?<path>.*), /$\{path}
+            - RewritePath=/org-service/(?<path>.*), /$\{path}
 
 management:
   endpoints:
