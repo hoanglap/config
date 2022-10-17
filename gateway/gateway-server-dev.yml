@@ -11,3 +11,9 @@ spring:
             - Path=/org-service/**
           filters:
             - RewritePath=/org-service/(?<path>.*), /$\{path}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
