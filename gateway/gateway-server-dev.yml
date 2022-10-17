@@ -10,4 +10,4 @@ spring:
           predicates:
             - Path=/org-service/**
           filters:
-            - RewritePath=/org-service/(?<path>.*), /$\{path}
+#            - RewritePath=/org-service/(?<path>.*), /$\{path}
