@@ -11,6 +11,7 @@ spring:
             - Path=/orgservice/**
           filters:
             - RewritePath=/orgservice/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
 
 management:
   endpoints:
