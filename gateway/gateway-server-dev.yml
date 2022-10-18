@@ -1,4 +1,16 @@
 spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          ostock-provider:
+            issuer-uri: http://keycloak:8080/auth/realms/ostock-realm
+          registration:
+            keycloak-spring-gateway-client:
+              provider: ostock-provider
+              client-id: ostock
+              client-secret: dC50Woe9QLbg644KtB6I33CTtid8hlrd
+              authorization-grant-type: authorization_code, password, client_credential
   cloud:
     gateway:
       discovery.locator:
@@ -24,3 +36,4 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     com.optimagrowth: DEBUG
+
